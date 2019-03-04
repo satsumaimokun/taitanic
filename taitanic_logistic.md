@@ -91,12 +91,6 @@ standardized_Age=Age_standardizer.transform(dataframe_train_features["Age"])
 dataframe_train_features["Age"]=standardized_Age
 ```
 
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:586: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:649: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-
-
 
 ```python
 #Fareの標準化
@@ -104,12 +98,6 @@ Fare_standardizer=scaler.fit(dataframe_train_features["Fare"])
 standardized_Fare=Fare_standardizer.transform(dataframe_train_features["Fare"])
 dataframe_train_features["Fare"]=standardized_Fare
 ```
-
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:586: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:649: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-
 
 
 ```python
@@ -155,62 +143,9 @@ dataframe_test_features["Age"]=dataframe_test_features["Age"].replace(np.nan,Age
 
 
 ```python
+#test_dataでFareがNaNになっているところがある
 dataframe_test_features[dataframe_test_features["Fare"].isnull()]
 ```
-
-
-
-
-<div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Pclass</th>
-      <th>Sex</th>
-      <th>Age</th>
-      <th>SibSp</th>
-      <th>Parch</th>
-      <th>Fare</th>
-    </tr>
-    <tr>
-      <th>PassengerId</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1044</th>
-      <td>3</td>
-      <td>male</td>
-      <td>60.5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
 
 
 ```python
@@ -232,20 +167,12 @@ standardized_Age=Age_standardizer.transform(dataframe_test_features["Age"])
 dataframe_test_features["Age"]=standardized_Age
 ```
 
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:649: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-
-
 
 ```python
 #Fareの標準化
 standardized_Fare=Fare_standardizer.transform(dataframe_test_features["Fare"])
 dataframe_test_features["Fare"]=standardized_Fare
 ```
-
-    /usr/local/brew/opt/pyenv/versions/anaconda3-4.4.0/lib/python3.6/site-packages/sklearn/preprocessing/data.py:649: DeprecationWarning: Passing 1d arrays as data is deprecated in 0.17 and will raise ValueError in 0.19. Reshape your data either using X.reshape(-1, 1) if your data has a single feature or X.reshape(1, -1) if it contains a single sample.
-      warnings.warn(DEPRECATION_MSG_1D, DeprecationWarning)
-
 
 
 ```python
